@@ -17,7 +17,7 @@
 :root{
   --red:#e30613; --red-dark:#b0000c; --gold:#c8a95b;
   --bg:#ffffff; --bg-2:#f6f4f4; --card:#ffffff; --line:#e7e3e3;
-  --text:#14161b; --muted:#5d6472; --ink:#0b0d12;
+  --text:#14161b; --muted:#5d6472; --ink:#0b0d12; --box-a:#434852; --box-b:#2f333b;
   --radius:18px; --max:1200px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -142,14 +142,14 @@ section{padding:110px 0;position:relative}
 
 /* TEAM */
 .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:50px}
-.member{display:grid;grid-template-columns:220px 1fr;background:linear-gradient(150deg,#1b1e26 0%,var(--ink) 70%);color:#fff;border:1px solid #1b1e26;box-shadow:0 26px 50px -30px rgba(0,0,0,.55);position:relative;border-radius:22px;overflow:hidden;transition:.3s}
+.member{display:grid;grid-template-columns:220px 1fr;background:linear-gradient(150deg,var(--box-a) 0%,var(--box-b) 75%);color:#fff;border:1px solid var(--box-a);box-shadow:0 26px 50px -30px rgba(0,0,0,.55);position:relative;border-radius:22px;overflow:hidden;transition:.3s}
 .member::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--red)}
 .member:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:0 30px 50px -28px rgba(227,6,19,.55)}
 .member img{width:100%;height:100%;object-fit:cover;min-height:280px;filter:grayscale(.15)}
 .member div{padding:30px;min-width:0}
 .member .role{color:var(--red);font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
 .member h3{font-family:"Bebas Neue";font-size:2.4rem;font-weight:400;line-height:1;margin:8px 0 14px}
-.member p{color:#b9bec8;font-size:.95rem}
+.member p{color:#d3d6dc;font-size:.95rem}
 
 /* GALLERY */
 .gallery{background:var(--bg-2)}
@@ -190,6 +190,23 @@ input,textarea{width:100%;background:var(--bg);border:1px solid var(--line);bord
 input:focus,textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 4px rgba(227,6,19,.15)}
 textarea{min-height:130px;resize:vertical}
 .form-note{font-size:.85rem;color:#2fd36b;display:none}
+
+/* DARK BOXES on the white page */
+.stat,.perk,.tier,.fine div,form{background:linear-gradient(150deg,var(--box-a) 0%,var(--box-b) 75%);color:#fff;border-color:var(--box-a);box-shadow:0 26px 50px -30px rgba(0,0,0,.55)}
+.stat small,.perk p,.fine div,label{color:#d3d6dc}
+.fine b{color:#fff}
+.perk .ico{background:rgba(255,255,255,.1)}
+.perk .ico svg{color:#ff4b55}
+.perk:hover{border-color:var(--red);box-shadow:0 30px 50px -28px rgba(227,6,19,.55)}
+.tier h3{color:#d3d6dc}
+.tier li.no{color:#9ba1ab}
+.tier li.no svg{color:#7d838e}
+.tier.full{background:linear-gradient(160deg,#5a2329 0%,var(--box-b) 70%);border-color:var(--red)}
+.tier .btn-ghost{border-color:rgba(255,255,255,.3);color:#fff}
+input,textarea{background:#262a31;border-color:#555b66;color:#fff}
+input::placeholder,textarea::placeholder{color:#8b919c}
+.member .role,.tier li.yes svg,.stat b{color:#ff4b55}
+.price small{color:#c0c4cc}
 
 /* FOOTER */
 footer{border-top:1px solid var(--line);padding:50px 0 34px}
